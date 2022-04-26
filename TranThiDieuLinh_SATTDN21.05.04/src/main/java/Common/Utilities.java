@@ -1,5 +1,6 @@
 package Common;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -33,12 +34,36 @@ public class Utilities {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 5) { // length of the random string.
+        while (salt.length() < 2) { // length of the random string.
             int index = (int) (rnd.nextFloat() * SALTCHARS.length());
             salt.append(SALTCHARS.charAt(index));
         }
         String saltStr = salt.toString();
         return saltStr + System.currentTimeMillis() + "@gmail.com";
+    }
+
+    public static String conditionalEmailRandom(int length) {
+        String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890";
+        String email = "";
+        String temp = RandomStringUtils.random(length, allowedChars);
+        email = temp.substring(0, temp.length() - 9) + "@t.c";
+        return email;
+    }
+
+    public static String conditionalPasswordRandom(int length) {
+        String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890" + "_-.";
+        String password = "";
+        String temp = RandomStringUtils.random(length, allowedChars);
+        password = temp.substring(0, temp.length() - 9);
+        return password;
+    }
+
+    public static String conditionalPIDRandom(int length) {
+        String allowedChars = "abcdefghijklmnopqrstuvwxyz" + "1234567890";
+        String pid = "";
+        String temp = RandomStringUtils.random(length, allowedChars);
+        pid = temp.substring(0, temp.length() - 9);
+        return pid;
     }
 
     public static String getPidRandom() {

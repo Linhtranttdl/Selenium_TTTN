@@ -19,7 +19,11 @@ public class RegisterPage {
 
     private final By lblErrorExitEmail = By.xpath("//p[@class='message error']");
 
+    private final By lblErrorInvalidEmailLength = By.xpath("//li[@class='email']//label[2]");
+
     private final By lblErrorInvalidPasswordLength = By.xpath("//li[@class='password']//label[2]");
+
+    private final By lblErrorInvalidConfirmPasswordLength = By.xpath("//*[@id=\"RegisterForm\"]/fieldset/ol/li[3]/label[2]");
 
     private final By lblErrorInvalidPIDLength = By.xpath("//li[@class='pid-number']//label[2]");
 
@@ -52,8 +56,16 @@ public class RegisterPage {
         return Constant.WEBDRIVER.findElement(lblErrorExitEmail);
     }
 
+    public WebElement getLblErrorInvalidEmailLength(){
+        return Constant.WEBDRIVER.findElement(lblErrorInvalidEmailLength);
+    }
+
     public WebElement getLblErrorInvalidPasswordLength() {
         return Constant.WEBDRIVER.findElement(lblErrorInvalidPasswordLength);
+    }
+
+    public WebElement getLblErrorInvalidConfirmPassLength(){
+        return Constant.WEBDRIVER.findElement(lblErrorInvalidConfirmPasswordLength);
     }
 
     public WebElement getLblErrorInvalidPIDLength() {
@@ -81,10 +93,15 @@ public class RegisterPage {
         return this.getLblErrorExitEmail().getText();
     }
 
+    public String getErrorInvalidEmailLengthMessage() { return this.getLblErrorInvalidEmailLength().getText();}
+
     public String getErrorInvalidPasswordLengthMessage() {
         return this.getLblErrorInvalidPasswordLength().getText();
     }
 
+    public String getErrorInvalidConfirmPass(){
+        return this.getLblErrorInvalidConfirmPassLength().getText();
+    }
     public String getErrorInvalidPidLengthMessage() {
         return this.getLblErrorInvalidPIDLength().getText();
     }
