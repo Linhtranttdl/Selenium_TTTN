@@ -1,6 +1,7 @@
 package Railway.Login;
 
 import Common.Constant;
+import Common.Utilities;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import Railway.TestBase;
@@ -11,7 +12,7 @@ public class TC32 extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
 
-    @Test(description = "TC32 - User can't login with blank Password textbox")
+    @Test(description = "TC32 - Verify that user cannot login with an incorrect password")
 
     public void TC32() {
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -20,12 +21,14 @@ public class TC32 extends TestBase {
         System.out.println("Step 2: Click on \"Login\" tab");
         homePage.goToLoginPage();
 
-        System.out.println("Step 3: Blank Password and enter Email fields ");
-        System.out.println("Step 4: Click on \"Login\" button");
-        loginPage.login(Constant.USERNAME, "");
+        System.out.println("Step 3: Enter incorrect email format to the fields");
+        System.out.println("Step 4: Enter password of any account");
+        System.out.println("Step 5: Click on Login button");
+        loginPage.login(Constant.USERNAME, Utilities.getPasswordRandom());
 
-        String actualMsg = loginPage.getErrorPasswordBlanksMessage();
-        String expectedMsg = "You must specify a password.";
-        Assert.assertEquals(actualMsg, expectedMsg, "There was a problem with your login and/or errors exist in your form.");
+        String actualMsg = loginPage.getErrorLoginInvalidUsernameOrPassword();
+        String expectedMsg = "Invalid username or password. Please try again.";
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Error login function");
     }
 }

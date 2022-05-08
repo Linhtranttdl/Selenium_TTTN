@@ -12,7 +12,7 @@ public class TC19 extends TestBase {
     RegisterPage registerPage = new RegisterPage();
 
     @Test(description = "TC19 - Verify that user cannot register an account with\n" +
-            "password info has more than 64 chars")
+            "password info has less than 8 chars")
 
     public void TC19() {
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -21,10 +21,10 @@ public class TC19 extends TestBase {
         System.out.println("Step 2: Click on \"Register\" tab");
         homePage.goToRegisterPage();
 
-        System.out.println("Step 3: Enter password has 65 chars");
+        System.out.println("Step 3: Enter password has 7 chars");
         System.out.println("Step 4: Enter valid info for the remaining fields");
         System.out.println("Step 5: Click Register button");
-        String password = Utilities.conditionalPasswordRandom(74);
+        String password = Utilities.conditionalPasswordRandom(16);
         String confirmPassword = password;
         registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.getPidRandom());
 

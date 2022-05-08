@@ -11,8 +11,7 @@ public class TC22 extends TestBase {
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "TC22 - Verify that user cannot register account with\n" +
-            "PID info has more than 20 chars")
+    @Test(description = "TC22 - Verify that user cannot register account with PID info has less than 8 chars")
 
     public void TC22() {
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -21,12 +20,12 @@ public class TC22 extends TestBase {
         System.out.println("Step 2: Click on \"Register\" tab");
         homePage.goToRegisterPage();
 
-        System.out.println("Step 3: Enter PID info has 21 chars");
+        System.out.println("Step 3: Enter PID info has 7 chars");
         System.out.println("Step 4: Enter valid info for the remaining fields");
         System.out.println("Step 5: Click Register button");
         String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
-        registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.conditionalPIDRandom(30));
+        registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.conditionalPIDRandom(16));
 
         String actualMsg = registerPage.getErrorInvalidPidLengthMessage();
         String expectedMsg = "Invalid ID length";

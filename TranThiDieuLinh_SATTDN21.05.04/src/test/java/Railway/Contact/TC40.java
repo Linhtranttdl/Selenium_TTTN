@@ -6,17 +6,16 @@ import PageObjects.ContactPage;
 import PageObjects.HomePage;
 import Railway.TestBase;
 import com.google.gson.JsonObject;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class TC37 extends TestBase {
+public class TC40 extends TestBase {
     HomePage homePage = new HomePage();
     ContactPage contactPage = new ContactPage();
 
-    @Test(description = "TC37 - Verify that contact infor displays", dataProvider = "data-provider")
+    @Test(description = "TC40 - Verify that contact infor displays", dataProvider = "data-provider")
 
-    public void TC37( String seatCode, String phone, String skype, String email) {
+    public void TC40( String seatCode, String phone, String skype, String email) {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 

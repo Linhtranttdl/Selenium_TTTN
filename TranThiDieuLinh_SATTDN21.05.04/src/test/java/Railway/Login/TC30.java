@@ -12,7 +12,7 @@ public class TC30 extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
 
-    @Test(description = "TC30 - Verify that user cannot login with an incorrect password")
+    @Test(description = "TC30 - Verify that user cannot login with an existing email is not registered ")
 
     public void TC30() {
         System.out.println("Step 1: Navigate to QA Railway Website");
@@ -21,10 +21,9 @@ public class TC30 extends TestBase {
         System.out.println("Step 2: Click on \"Login\" tab");
         homePage.goToLoginPage();
 
-        System.out.println("Step 3: Enter incorrect email format to the fields");
-        System.out.println("Step 4: Enter password of any account");
-        System.out.println("Step 5: Click on Login button");
-        loginPage.login(Constant.USERNAME, Utilities.getPasswordRandom());
+        System.out.println("Step 3: Enter email which is not registered and password");
+        System.out.println("Step 4: Click on Login button");
+        loginPage.login(Utilities.getEmailRandom(), Constant.PASSWORD);
 
         String actualMsg = loginPage.getErrorLoginInvalidUsernameOrPassword();
         String expectedMsg = "Invalid username or password. Please try again.";

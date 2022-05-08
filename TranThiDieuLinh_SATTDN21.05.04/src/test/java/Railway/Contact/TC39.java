@@ -5,12 +5,12 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC36 extends TestBase {
+public class TC39 extends TestBase {
     HomePage homePage = new HomePage();
 
-    @Test(description = "TC36 - Verify that user can navigate to Contact tab")
+    @Test(description = "TC39 - Verify that user can navigate to Contact tab")
 
-    public void TC36() {
+    public void TC39() {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 

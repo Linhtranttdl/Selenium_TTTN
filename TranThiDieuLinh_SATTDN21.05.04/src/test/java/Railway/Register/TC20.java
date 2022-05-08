@@ -21,15 +21,15 @@ public class TC20 extends TestBase {
         System.out.println("Step 2: Click on \"Register\" tab");
         homePage.goToRegisterPage();
 
-        System.out.println("Step 3:  Enter confirm password doesn't fix with");
+        System.out.println("Step 3: Enter password has 65 chars");
         System.out.println("Step 4: Enter valid info for the remaining fields");
         System.out.println("Step 5: Click Register button");
-        String password = Utilities.getPasswordRandom();
-        String confirmPassword = Utilities.getPasswordRandom();
+        String password = Utilities.conditionalPasswordRandom(74);
+        String confirmPassword = password;
         registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.getPidRandom());
 
-        String actualMsg = registerPage.getErrorDoNotMatchPass();
-        String expectedMsg = "The two passwords do not match";
+        String actualMsg = registerPage.getErrorInvalidPasswordLengthMessage();
+        String expectedMsg = "Invalid password length";
 
         String actualMsg1 = registerPage.getErrorRegisterAccountFail();
         String expectedMsg1 = "There're errors in the form. Please correct the errors and try again.";
