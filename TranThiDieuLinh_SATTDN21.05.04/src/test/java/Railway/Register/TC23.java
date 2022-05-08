@@ -7,28 +7,29 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC16 extends TestBase {
+public class TC23 extends TestBase {
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "TC16 - Verify that user can register an account with password info has 8 chars")
+    @Test(description = "TC23 - Verify that user cannot register account with PID info has 8 chars")
 
-    public void TC16() {
+    public void TC23() {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 
         System.out.println("Step 2: Click on \"Register\" tab");
         homePage.goToRegisterPage();
 
-        System.out.println("Step 3: Enter password info with 8 characters");
+        System.out.println("Step 3: Enter PID info has 8 chars");
         System.out.println("Step 4: Enter valid info for the remaining fields");
         System.out.println("Step 5: Click Register button");
-        String password = Utilities.conditionalPasswordRandom(17);
+        String password = Utilities.getPasswordRandom();
         String confirmPassword = password;
-        registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.getPidRandom());
+        registerPage.register(Utilities.getEmailRandom(), password, confirmPassword, Utilities.conditionalPIDRandom(17));
 
         String actualMsg = registerPage.getRegisterSuccessMessage();
         String expectedMsg = "You're here";
-        Assert.assertEquals(actualMsg, expectedMsg, "User cannot register account");
+
+        Assert.assertEquals(actualMsg, expectedMsg, "Error register function");
     }
 }

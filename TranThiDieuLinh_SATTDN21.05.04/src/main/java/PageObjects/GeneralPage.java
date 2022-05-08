@@ -15,6 +15,10 @@ public class GeneralPage {
 
     private final By tabChangePassword = By.xpath("//a[@href='/Account/ChangePassword.cshtml']//span");
 
+    private final By tabFAQ = By.xpath("//span[contains(text(),'FAQ')]");////a[@href='/Page/FAQ.cshtml']//span
+
+    private final By tabContact = By.xpath("//a[@href='/Page/Contact.cshtml']//span");
+
     private final By tabTimeTable = By.xpath("//a[@href='TrainTimeListPage.cshtml']//span");
 
     private final By tabTicketPrice = By.xpath("//a[@href='/Page/TrainPriceListPage.cshtml']//span");
@@ -53,6 +57,10 @@ public class GeneralPage {
     public WebElement getTabTimeTable() {
         return Constant.WEBDRIVER.findElement(tabTimeTable);
     }
+
+    public WebElement getTabFAQ() { return Constant.WEBDRIVER.findElement(tabFAQ);}
+
+    public WebElement getTabContact() {return Constant.WEBDRIVER.findElement(tabContact);}
 
     public WebElement getTabTicketPrice() {
         return Constant.WEBDRIVER.findElement(tabTicketPrice);
@@ -96,6 +104,10 @@ public class GeneralPage {
     public void goToChangePasswordPage() {
         this.getTabChangePassword().click();
     }
+
+    public void goToFAQPage() {this.getTabFAQ().click();}
+
+    public void goToContactTab() {this.getTabContact().click();}
 
     public void goToTimeTablePage() {
         this.getTabTimeTable().click();

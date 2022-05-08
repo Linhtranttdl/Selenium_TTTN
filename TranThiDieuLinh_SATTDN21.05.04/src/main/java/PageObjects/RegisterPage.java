@@ -19,6 +19,8 @@ public class RegisterPage {
 
     private final By lblErrorExitEmail = By.xpath("//p[@class='message error']");
 
+    private final By lblErrorDoNoMatchPassword = By.xpath("//label[contains(text(),'The two passwords do not match')]");
+
     private final By lblErrorInvalidEmailLength = By.xpath("//li[@class='email']//label[2]");
 
     private final By lblErrorInvalidPasswordLength = By.xpath("//li[@class='password']//label[2]");
@@ -56,6 +58,8 @@ public class RegisterPage {
         return Constant.WEBDRIVER.findElement(lblErrorExitEmail);
     }
 
+    public WebElement getLblErorDoNotMatchPass() {return Constant.WEBDRIVER.findElement(lblErrorDoNoMatchPassword); }
+
     public WebElement getLblErrorInvalidEmailLength(){
         return Constant.WEBDRIVER.findElement(lblErrorInvalidEmailLength);
     }
@@ -92,6 +96,8 @@ public class RegisterPage {
     public String getErrorEmailMessage() {
         return this.getLblErrorExitEmail().getText();
     }
+
+    public String getErrorDoNotMatchPass() {return this.getLblErorDoNotMatchPass().getText(); }
 
     public String getErrorInvalidEmailLengthMessage() { return this.getLblErrorInvalidEmailLength().getText();}
 

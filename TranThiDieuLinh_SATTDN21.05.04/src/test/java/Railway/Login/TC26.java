@@ -1,18 +1,19 @@
-package Railway;
+package Railway.Login;
 
 import Common.Constant;
 import PageObjects.HomePage;
 import PageObjects.LoginPage;
+import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC01 extends TestBase {
+public class TC26 extends TestBase {
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
 
-    @Test(description = "TC001 - User can log into Railway with valid username and password")
+    @Test(description = "TC26 - Verify that user can login with valid account.")
 
-    public void TC01() {
+    public void TC26() {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 

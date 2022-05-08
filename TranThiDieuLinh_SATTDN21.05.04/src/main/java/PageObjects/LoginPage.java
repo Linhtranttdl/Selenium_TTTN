@@ -17,6 +17,8 @@ public class LoginPage {
 
     private final By lblErrorUserNameBlanks = By.xpath("//li[@class='username']//label[2]");
 
+    private final By lblErrorPasswordBlanks =  By.xpath("//label[contains(text(),'You must specify a password.')]");
+
     private final By lblErrorUsernameOrPasswordInvalid = By.xpath("//p[@class='message error LoginForm']");
 
     //Elements
@@ -34,6 +36,10 @@ public class LoginPage {
 
     public WebElement getLblLoginErrorMsg() {
         return Constant.WEBDRIVER.findElement(lblLoginErrorMsg);
+    }
+
+    public WebElement getLblErrorPasswordBlanksMessage(){
+        return Constant.WEBDRIVER.findElement(lblErrorPasswordBlanks);
     }
 
     public WebElement getLblErrorUserNameBlanksMessage() {
@@ -66,6 +72,8 @@ public class LoginPage {
     public String getErrorUseNameBlanksMessage() {
         return this.getLblErrorUserNameBlanksMessage().getText();
     }
+
+    public String getErrorPasswordBlanksMessage() {return this.getLblErrorPasswordBlanksMessage().getText(); }
 
     public String getErrorPasswordMessage() {
         return this.getLblErrorUsernameOrPasswordMessage().getText();

@@ -37,5 +37,11 @@
   },
   "FTTC303": {
     "HS": 150000
+  },
+  "TC37": {
+      "seatCode": "404",
+      "phone": "012650.888.79",
+      "skype": "vietthanhle.lg",
+      "email": "thanh.viet.le@logigear.com"
   }
 }
