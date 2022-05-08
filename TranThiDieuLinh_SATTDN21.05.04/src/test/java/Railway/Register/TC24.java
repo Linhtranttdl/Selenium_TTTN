@@ -33,3 +33,5 @@ public class TC24 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Error register function");
     }
 }
+
+

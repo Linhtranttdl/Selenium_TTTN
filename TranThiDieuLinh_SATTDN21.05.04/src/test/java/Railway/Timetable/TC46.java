@@ -5,16 +5,18 @@ import Railway.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC42 extends TestBase {
+public class TC46 extends TestBase {
     HomePage homePage = new HomePage();
 
-    @Test(description = "TC42 - Verify that user can navigate to Timetable tab")
+    @Test(description = "TC46 - Verify that \"check price\" link can navigate to Ticket Price tab")
 
-    public void TC42() {
+    public void TC46() {
         System.out.println("Step 1: Navigate to QA Railway Website");
         homePage.open();
 
         System.out.println("Step 2: Go to Timetable page");
+        System.out.println("Step 3: Click on \"check price\" link of any train");
+        System.out.println("Step 4: Observe tab is navigated ");
         homePage.goToTimeTablePage();
 
         String actualMsg = homePage.getNamePagesTitle();
@@ -22,5 +24,6 @@ public class TC42 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Timetable page is not displayed as expected");
     }
 }
+
 
 

@@ -19,3 +19,4 @@ public class TC01 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Homepage is not displayed as expected");
     }
 }
+

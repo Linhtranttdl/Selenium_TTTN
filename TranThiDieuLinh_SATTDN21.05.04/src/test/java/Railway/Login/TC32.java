@@ -32,3 +32,4 @@ public class TC32 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Error login function");
     }
 }
+

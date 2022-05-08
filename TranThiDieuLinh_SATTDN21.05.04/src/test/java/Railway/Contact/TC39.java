@@ -22,3 +22,4 @@ public class TC39 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Contact page is not displayed as expected");
     }
 }
+

@@ -37,3 +37,5 @@ public class TC08 extends TestBase {
         Assert.assertEquals(actualMsg1, expectedMsg1, "Error register function");
     }
 }
+
+

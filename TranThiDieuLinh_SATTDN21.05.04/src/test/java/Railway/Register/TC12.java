@@ -31,3 +31,4 @@ public class TC12 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "User cannot register account");
     }
 }
+

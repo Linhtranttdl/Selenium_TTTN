@@ -22,3 +22,4 @@ public class TC04 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "Register page is not displayed as expected");
     }
 }
+

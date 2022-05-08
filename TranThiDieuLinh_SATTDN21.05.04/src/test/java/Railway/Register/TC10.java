@@ -39,3 +39,5 @@ public class TC10 extends TestBase {
         Assert.assertEquals(actualMsg, expectedMsg, "User can register account with an exiting email");
     }
 }
+
+
